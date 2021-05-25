@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/64d58efce2.js"crossorigin="anonymous">
+    </script>
+   
+    <link rel="stylesheet" href="style0.css"/>
+       
+      <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-database.js"></script>
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-analytics.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-storage.js"></script>
+    <title>Mise à jour de mot de passe</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="forms-container">
+        <div class="signin-signup">
+          <form action="#" class="sign-in-form" >
+            <h2 class="title">Mot de passe oublié</h2>
+            <p>Entrez votre email</p>
+            <div class="input-field">
+              <i class="fas fa-user"></i>
+              <input type="text" placeholder="Nom de l'utilisateur" id="mailr" required/>
+            </div>
+            <input type="submit" value="Ok" class="btn solid" id="btnr"/>
+          </form>
+
+   
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="connection.js"></script>
+<script>
+firebase.auth().onAuthStateChanged(function(user){
+if (user){
+  window.location.href="acceuil.html";
+}
+  });
+</script>
+
+  </body>
+</html>
