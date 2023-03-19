@@ -9,39 +9,44 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <!-- MATERIAL DESIGN ICONIC FONT -->
 
-        <link rel="stylesheet" href="design_files/fonts/material-design-iconic-font/css/material-design-iconic-font.min.css">
+       
             <!-- STYLE CSS -->
-    <link rel="stylesheet" href="design_files/css/style.css">
+            <link rel="stylesheet" href="style1.css">  
+         
+    
+    
+     <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-database.js"></script>
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-analytics.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-storage.js"></script>
+
 </head>
-          <body class="h-100">
+          <body>
             <nav class="navbar navbar-expand-lg bg-dark text-white">
                 <div class="container-fluid">
                      <ul class="nav navbar-nav">
                  <li>
-                   <a class="navbar-brand"   style ="color:whitesmoke;text-decoration-style:wavy;" href="#">YourLab</a>
+                   <a class="navbar-brand"   style ="color:whitesmoke;text-decoration-style:wavy;" href="#"> <img src="images/limed.png" width="350" height="80" alt=""></a>
                  </li>
                  <li>
-                    <a class="nav-link"   style ="color:whitesmoke;text-decoration-style:wavy;" href="acceuil.html">
-                   <span style="color:white" >Mon compte</span>
-                   </a>
-                   </li>
-                 <li>
-                  <a class="nav-link"   style ="color:whitesmoke;text-decoration-style:wavy;" href="#">
-                 <span style="color:white" >Qui sommes nous?</span>
-                 </a>
+                  <button id="moncompte" type="button"style="margin-bottom: 10px;">Mon compte</button>
                  </li>
                  <li>
-                  <a class="nav-link"   style ="color:whitesmoke;text-decoration-style:wavy;" href="#"><span style="color:white" >FAQ</span>?</a>
+                  <a class="nav-link"   style ="color:whitesmoke;text-decoration-style:wavy;" href="foireauxquestions.html"><span style="color:white" >FAQ</span>?</a>
                  </li>
-      
-                    </ul>
+                </ul>
+                <h25>Bienvenue sur la platform du laboratoire d'informatique médicale<span style="color: coral; height: 15px;width:15px;">,</span></h25>
               <div class="dropdown navbar-right">
                 <button id="optionid"class="btn btn-light dropdown-toggle bg-dark text-white" type="button" aria-expanded="false" aria-haspopup="true" data-toggle="dropdown"> 
                   Options
                 </button>
                 <div class="dropdown-menu"
                      aria-labelledby="optionid" >
-                     <a class="dropdow-item"id="rsl"href="signupsignin.html">Inscrire/login</a>
+                     <a class="dropdown-item"id="rsl"href="signupsignin.html">Inscrire/login</a>
       
                 </div>
       
@@ -50,23 +55,584 @@
             </div>
       
           </nav>
-         <div class="wrapper" style="background-image: url('images/bg.jpg')">
-           <div class="content">
-               <h1> Bienvenue sur l'application YourLab'</h1>
-               <h2>L'application permet de gérer les laboratoires de recherche au niveau d'Algérie.</h2>  
-              
-           </div>
-           <div class="side-bar">
-               <img src="images/menu.png" class="menu">
-               <div class="social-links">
-                      <img src="images/fb.png">
-                      <img src="images/ig.png">
-                      <img src="images/tw.png">
-               </div>
-           </div>
-             
-          </div>
+
+          <div class="container">
+            <div class="row" style="margin-top: 10px;">
+              <div class="col-md-12">
+          <div class="wrapper">
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+   <ol class="carousel-indicators">
+     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+     <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+     <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+     <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+     <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+     <li data-target="#carouselExampleIndicators" data-slide-to="5"></li>
+     <li data-target="#carouselExampleIndicators" data-slide-to="6"></li>
+   </ol>
+   <div class="carousel-inner"  >
+     <div class="carousel-item active">
+       <img class="d-block " src="images/irm.jpg" alt="First slide" style="width:1100px;height:200px;" >
+     </div>
+     <div class="carousel-item">
+       <img class="d-block " src="images/dev.jpg" alt="Second slide" style="width:1100px;height:200px;">
+     </div>
+     <div class="carousel-item">
+       <img class="d-block " src="images/cab.jpg" alt="Third slide" style="width:1100px;height:200px;">
+     </div>
+     <div class="carousel-item">
+       <img class="d-block " src="images/mat.jpg" alt="Fourth slide" style="width:1100px;height:200px;">
+     </div>
+     <div class="carousel-item">
+       <img class="d-block " src="images/ser.jpg" alt="Fifth slide" style="width:1100px;height:200px;">
+     </div>
+     <div class="carousel-item">
+       <img class="d-block " src="images/cab.jpg" alt="Sixsth slide" style="width:1100px;height:200px;">
+     </div>
+     
+   <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+     <span class="sr-only">Précédent</span>
+   </a>
+   <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+     <span class="carousel-control-next-icon" aria-hidden="true"></span>
+     <span class="sr-only">Suivant</span>
+   </a>
+ </div>
+ 
+ </div>
+</div>
          
+</div>
+</div>
+
+<!-- les equipes de limed -->
+
+<style media="screen">
+  *, ::before, ::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+
+  }
+  .container-faq {
+    width:70%;
+    max-width:900px;
+    min-width:700px;
+    height:auto;
+    margin:10px auto 0;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:flex-start;
+  }
+  .question {
+    width:100%;
+    height:auto;
+    margin:5px;
+    }
+    .visible {
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      color:white;
+      background:linear-gradient( rgba(0,0,0,0.6),rgba(0,0,0,0.6));
+      border-radius:10px;
+      position:relative;
+      z-index:100;
+    }
+    
+    .visible img{
+      margin-right:10px;
+      width:25px;
+      cursor:pointer;
+    }
+    .toggle-pannel{
+      padding:0px 15px;
+      height:0px;
+      opacity:0;
+
+    }
+
+    .toggle-pannel p {
+      color:white;
+      font-size:20px;
+      line-height:1.5;
+    }
+    /*le style des cards */
+
+    .titre{
+      text-align:center;
+      padding:25px 0px;
+    }
+
+    .card-body{
+      box-shadow:0 0 20px 7px rgba(0,0,0,0.1);
+    }
+    .card{
+      margin: 20px 10px;
+
+
+    }
+    @media (max-width: 800px){
+        .test{
+      flex-direction:column;}
+}
+
+h3{
+font-size: 24px;
+color: #718886;
+font-weight: bold;
+}
+#team img{
+margin-top: -50px;
+
+}
+#team .card{
+border-radius: 0;
+box-shadow: 5px 5px 15px #048b9a;
+transition: all 0.3s ease-in;
+-webkit-transition: all 0.3s ease-in;
+-moz-transition: all 0.3s ease-in;
+}
+#team .card:hover{
+background: #048b9a;
+color: white;
+border-radius: 5px;
+border:none;
+box-shadow: 5px 5px 10px #9e9e9e;
+}
+#team .card:hover h3, #team .card:hover svg{
+color: white;
+}
+#team p {
+font-size: 25px;
+font-weight: lighter;
+color:#cdebf6;
+}
+#team .card{
+background: #bde8e4;
+}
+</style>
+<div class="equipe" style="padding:auto">
+
+  <h1>Les équipes de LIMED</h1>
+  <div class="container-faq">
   
+    <div class="question">
+      <div class="visible">
+        <h99>Services Web et Fouille des Données Médicales (SWFDM)</h99>
+        <img src="images/plus.svg" alt="">
+  
+      </div>
+      <div class="toggle-pannel">
+  
+        <p>L’objectif des travaux de recherche de l’équipe est de développer des méthodes et outils de fouille et d'extraction de connaissances à partir de données médicales permettant de valoriser les grandes bases de données complexes notamment dans la santé et des entreprises économiques et industrielles.</p>
+  
+      </div>
+    </div>
+    <div class="question">
+      <div class="visible">
+        <h99>Nouvelles Technologies,Ethiques et Approches Economiques de la santé (NTEAES)</h99>
+        <img src="images/plus.svg" alt="">
+  
+      </div>
+      <div class="toggle-pannel">
+  
+        <p>L'objectif de cette équipe est d'utiliser les nouvelles technologies de l'information et de la communication dans le domaine de la santé. Par ailleurs, cette équipe a comme mission de soutenir les 5 autres équipes en termes de proposition de modèles économiques pour les différentes modélisations développées tant côté données que celui applicatifs (applications, protocoles, architectures etc.)</p>
+  
+      </div>
+    </div>
+    <div class="question">
+      <div class="visible">
+        <h99>Calcul massif:Application Parallèles et Distribués (CaMPaD)</h99>
+        <img src="images/plus.svg" alt="">
+  
+      </div>
+      <div class="toggle-pannel">
+  
+        <p>L’équipe CaMPad a pour mot d’ordre l’interdisciplinarité. Son ambition est de partager la culture du parallélisme devenu pervasif dans le monde d’aujourd’hui. Ses activités de recherche s'articulent autour de l'algorithmique, du calcul haute performance et à grand échelle et à ses applications et modalités en science et en engineering, notamment dans les réseaux à grande échelle de l’Internet of Things, des réseaux de capteurs, qui posent aussi des problèmes de données de masse (big data) et leurs aspects associés à savoir leur traitement (data science), leur sécurité et à l'efficacité énergétique, entre autres. CaMPaD contribue par ailleurs, par la conception et la mise en place de nouvelles solutions dans le calcul parallèle et distribué, dans la conception et l’analyse des protocoles réseaux modélisés, dans la sécurité par l’accélération des algorithmes de cryptographie et dans la cryptanalyse</p>
+  
+      </div>
+    </div>
+
+    <div class="question">
+      <div class="visible">
+        <h99>Traitement d'Images Médicales (TIM) </h99>
+        <img src="images/plus.svg" alt="">
+  
+      </div>
+      <div class="toggle-pannel">
+  
+        <p>Le thème de recherche traité par cette équipe a pour objectif le développement de modèles, de méthodes, d'algorithmes et d’applications pour le traitement de données issues d'imageurs médicaux. Ces travaux donnent lieu à d'étroites collaborations entre traiteurs d’images et médecins. Les images considérées sont généralement massives, complexes et hétérogènes (données vectorielles, multisources, multimodales, séquences temporelles). Par conséquent, le traitement d’images permet de donner lieu à des logiciels qui pourront aider le médecin lors de son diagnostic à prendre une décision, et par ailleurs, assister le médecin lors de ses interventions chirurgicales</p>
+  
+  
+      </div>
+    </div>
+  
+    <div class="question">
+      <div class="visible">
+        <h99>IA et Robotique pour la Médcine (IARM)</h99>
+        <img src="images/plus.svg" alt="">
+  
+      </div>
+      <div class="toggle-pannel">
+  
+        <p>L’objectif des travaux de recherche de l’équipe est de concevoir et réaliser des outils à base de la robotique médicale, la segmentation, le recalage des images multimodales, la visualisation 3D, la réalité virtuelle. Et augmenter le traitement du signal et des images ainsi que les aspects ergonomiques (Interfaces Homme-Machine) pour l'assistance au geste médical et pour la surveillance et le suivi de patients.</p>
+  
+  
+      </div>
+    </div>
+    <div class="question">
+      <div class="visible">
+        <h99>Représentation de la Connaissance et Apprentissage Automatique (RCAA)</h99>
+        <img src="images/plus.svg" alt="">
+  
+      </div>
+      <div class="toggle-pannel">
+  
+        <p>Les principaux axes de recherche de l'équipe RCCA tournent autour des systèmes intelligents et leurs applications en général et en médecine en particulier, Le premier thème porte sur l'exploitation des outils de l'intelligence artificielle (IA) pour aider le medecin dans le cadre du diagnostic et suivi médical des patients, Ainsi, une thèse de doctorat portant sur le suivi intelligent des diabétiques est en cours, Le deuxième projet de l'équipe porte sur le développement d'algorithmes pour une méilleur résolution des problèmes d'optimisation combinatoire.</p>
+  
+  
+      </div>
+    </div>
+    <div class="question">
+      <div class="visible">
+        <h99>Graphes,Optimisation,Big Data et Applications (GOBDA)</h99>
+        <img src="images/plus.svg" alt="">
+      </div>
+      <div class="toggle-pannel">
+  
+        <p>La thématique de recherche de l'équipe GOBDA s'articule autour de plusieurs axes de recherche en informatique impliquant essentiellement les graphes comme outils puissants de modélisation et de traitement.</p>
+      </div>
+    </div>
+    <div class="question">
+      <div class="visible">
+        <h99>Réseaux Emergents:Services et Applications (RESA)</h99>
+        <img src="images/plus.svg" alt="">
+  
+      </div>
+      <div class="toggle-pannel">
+  
+        <p>Les efforts de l'équipe "Réseaux Emergents : Services et Applications" sont consacrés à l'étude des réseaux émergeants. La composante de l'équipe étant multidisciplinaire, le domaine de compétence de l'équipe englobe les réseaux de capteurs, la technologie émergeante 5G, les réseaux mobiles, les réseaux cellulaires ainsi que les réseaux définis par software (Software Defined Networks).</p>
+  
+  
+      </div>
+    </div>
+  </div>
+  </div>
+
+  
+  <!-- les membres de limed-->
+  
+  <section id="team">
+    <div class="container my-3 py-5 text-center">
+      <div class="row mb-5">
+        <div class="col">
+          <h1>Les Acteurs de LIMED</h1>
+          <p class="mt-3">LIMED se compose de différents acteurs dont un directeur et 08 chefs d'équipes et plus de 30 membres (enseignats chercheurs)</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-3 col-md-6">
+          <div class="card">
+            <div class="card-body">
+              <img src="images/mr.jpg" alt="" class="img-fluid rounded-circle w-50 mb-3">
+              <h3>Dr: Slimani Hachem</h3>
+              <h5>Directeur de <br> LIMED</h5>
+              <div class="d-flex flex-rox justify-content-center">
+                <div class="p-4">
+                  <a href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
+    <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
+  </svg>
+                  </a>
+                </div>
+                <div class="p-4">
+                  <a href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-twitter" viewBox="0 0 16 16">
+    <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"/>
+  </svg>
+                  </a>
+                </div>
+                <div class="p-4">
+                  <a href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16">
+    <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/>
+  </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="card">
+            <div class="card-body">
+              <img src="images/mr.jpg" alt="" class="img-fluid rounded-circle w-50 mb-3">
+              <h3>Dr: Amroune Kamel</h3>
+              <h5>Chef d'équipe RCAA</h5>
+              <div class="d-flex flex-rox justify-content-center">
+                <div class="p-4">
+                  <a href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
+      <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
+    </svg>
+                  </a>
+                </div>
+                <div class="p-4">
+                  <a href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-twitter" viewBox="0 0 16 16">
+      <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"/>
+    </svg>
+                  </a>
+                </div>
+                <div class="p-4">
+                  <a href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16">
+    <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/>
+  </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="card">
+            <div class="card-body">
+              <img src="images/dame.jpg" alt="" class="img-fluid rounded-circle w-50 mb-3">
+              <h3>Dr: Elbouhissi Houda</h3>
+              <h5>Membre d'équipe SWFDM</h5>
+              <div class="d-flex flex-rox justify-content-center">
+                <div class="p-4">
+                  <a href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
+    <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
+  </svg>
+                  </a>
+                </div>
+                <div class="p-4">
+                  <a href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-twitter" viewBox="0 0 16 16">
+      <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"/>
+    </svg>
+                  </a>
+                </div>
+                <div class="p-4">
+                  <a href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16">
+      <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/>
+    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="card">
+            <div class="card-body">
+              <img src="images/dame.jpg" alt="" class="img-fluid rounded-circle w-50 mb-3">
+              <h3>Dr: Aloui <br>  Soraya</h3>
+              <h5>Membre d'équipe TIM</h5>
+              <div class="d-flex flex-rox justify-content-center">
+                <div class="p-4">
+                  <a href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
+                      <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
+                    </svg>
+                  </a>
+                </div>
+                <div class="p-4">
+                  <a href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-twitter" viewBox="0 0 16 16">
+    <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"/>
+  </svg>
+                  </a>
+                </div>
+                <div class="p-4">
+                  <a href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16">
+    <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/>
+  </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- FOOOTER -->
+  
+  <footer class="page-footer" style="background:#51aab8;">
+  <div class="container text-center text-md-left mt-5">
+    <div class="row">
+      <div class="col-md-3 mx-auto mb-4">
+        <h6 class="text-uppercase font-weight-bold"> LIMED</h6>
+        <hr class="bg-success mb-4 mt-0 d-inline-block mx-auto" style="width:50px;height:2px;">
+        <p class="mt-2">Laboratoire Limed</br> Université Abderrahmane Mira Campus Targa Ouzemmour Béjaia,Algérie-06000</p>
+        <div id="map" style="height:200px;width:100%;"></div>
+      </div>
+      <div class="col-md-2 mx-auto mb-4">
+        <h6 class="text-uppercase font-weight-bold"> Liens Utiles</h6>
+        <hr class="bg-success mb-4 mt-0 d-inline-block mx-auto" style="width:95px;height:2px;">
+      <ul class="list-unstyled">
+        <li class="my-2"> <a href="http://univ-bejaia.dz/" style="color:black;">Université Abderrahmane Mira Béjaia</a> </li>
+        <li class="my-2"> <a href="http://univ-bejaia.dz/limed"style="color:black;">LIMED</a> </li>
+        <li class="my-2"> <a href="https://www.mesrs.dz/"style="color:black;">Ministère de l'Enseignement Supérieur et de la Recherche Scientifique(MESRS)</a> </li>
+      </ul>
+      </div>
+      <div class="col-md-2 mx-auto mb-4 ">
+        <h6 class="text-uppercase font-weight-bold"> Contactez-Nous</h6>
+        <hr class="bg-success mb-4 mt-0 d-inline-block mx-auto" style="width:150px;height:2px;">
+        <ul class="list-unstyled">
+          <li class="my-2"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope mr-3" viewBox="0 0 16 16">
+    <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2zm13 2.383-4.758 2.855L15 11.114v-5.73zm-.034 6.878L9.271 8.82 8 9.583 6.728 8.82l-5.694 3.44A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.739zM1 11.114l4.758-2.876L1 5.383v5.73z"/>
+  </svg></br>
+  limed@univ-bejaia.dz
+  </li>
+  <li class="my-4">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone mr-3" viewBox="0 0 16 16">
+    <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
+  </svg></br>
+  034253619
+  </li>
+  <li class="my-2">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-facebook mr-3" viewBox="0 0 16 16">
+    <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
+  </svg></br>
+  limed-bejaia
+  </li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+  
+  </footer>
+  
+      <section>    
+             <p>&copy; copyright
+             <a href="#">Limed.dz</a>
+             2021</p>
+                
+      </section>
+
+  
+    
+
+       
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.0/gsap.min.js"></script>
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+          <script src="connection.js"></script>
+         
+         <script>
+           $("#moncompte").click(function () {
+           firebase.auth().onAuthStateChanged(function(user)
+        {
+           if (user)
+              {
+                   var userID=firebase.auth().currentUser.uid;
+                   firebase.database().ref('Users/' + userID).once('value').then(function(snapshot)
+                { $("#optionid").hide();
+                  if(snapshot.val())
+                    {
+                        if(snapshot.val().option=="Membre")
+                        {
+                            window.location.href="Membreenseignant.html";
+                         }
+                           else
+                             if(snapshot.val().option=="Chef équipe")
+                                      {
+                                         window.location.href="cheféquipe.html";
+                                      }
+             }
+               else
+                  { 
+                      window.location.href="membre.html";
+                  }
+                  
+          if(snapshot.val().option=="Admin")
+         {
+          window.location.href="Admin.html";
+         }
+     });
+
+  }
+  });});
+         </script>
+
+         <script>
+          firebase.auth().onAuthStateChanged(function(user){
+          if (user){
+          $('#rsl').hide();
+         }
+          });
+        </script>
+        <script>
+          firebase.auth().onAuthStateChanged(function(user){
+          if (!user){
+          $('#moncompte').hide();
+         }
+          });
+       
+        </script>
+
+         <script type="text/javascript">
+
+          const croix=document.querySelectorAll('.visible img');
+        
+        
+        
+        croix.forEach(element => {
+        element.addEventListener('click', function(){
+            const height = this.parentNode.parentNode.childNodes[3].scrollHeight;
+            const curr = this.parentNode.parentNode.childNodes[3];
+        
+          if (this.src.includes('plus')) {
+            this.src = 'images/moin.svg';
+            gsap.to(curr, {duration: 0.2, height: height + 40, opacity: 1, padding: '20px 15px'})
+          }else if (this.src.includes('moin')) {
+            this.src='images/plus.svg';
+            gsap.to(curr, {duration: 0.2, height: 0, opacity: 0, padding: '0px 15px'})
+          }
+        })
+        })
+        
+          </script>
+           <script>
+            function initMap(){
+            var options = {         
+              center:{lat:36.7519, lng:5.0368},
+              zoom:10
+                        }
+            map = new google.maps.Map(document.getElementById('map'),options);
+
+            function addMarker(property){
+            const marker=new google.maps.Marker({
+            position:property.location,
+            map:map
+                                              });
+        
+            // detail windiw
+            const detailWindow = new google.maps.InfoWindow({
+            content:property.content
+                                                          });
+            marker.addListener("mouseover",()=>{           
+            detailWindow.open(map,marker);
+                                              })
+
+                                              }
+            
+            addMarker({location:{lat:36.7519, lng:5.0368}, 
+            content:'<h23 style="color:black;font-size:20px;font-family:sans-serif">Limed</h23>'});}
+
+            </script>
 </body>
 </html>

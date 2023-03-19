@@ -1,0 +1,104 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    
+        <!-- MATERIAL DESIGN ICONIC FONT -->
+            
+            <!-- STYLE CSS -->
+   
+    <link rel="stylesheet" href="style1.css">
+    <link rel="stylesheet" href="design_files/fonts/material-design-iconic-font/css/material-design-iconic-font.css">
+          <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-database.js"></script>
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-analytics.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-storage.js"></script>
+   <!--firebase-->
+    <title>Jeton d'accées</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-dark text-white">
+      <div class="container-fluid">
+              <ul class="nav navbar-nav">
+                      <li>
+                        <a class="navbar-brand"   style ="color:whitesmoke;text-decoration-style:wavy;" href="#">Limed</a>
+                      </li>
+                      <li>
+                        <a class="nav-link"   style ="color:whitesmoke;text-decoration-style:wavy;" href="index.html">
+                      <span style="color:white">Acceuil</span>
+                      </a>
+                      </li>
+                      <li>
+                        <a class="nav-link"   style ="color:whitesmoke;text-decoration-style:wavy;" href="foireauxquestions.html"><span style="color:white" >FAQ</span>?</a>
+                      </li> 
+              </ul>
+        <div class="dropdown navbar-right">
+          <button id="optionid"class="btn btn-light dropdown-toggle bg-dark text-white" type="button" aria-expanded="false" aria-haspopup="true" data-toggle="dropdown"> 
+            Options
+          </button>
+          <div class="dropdown-menu"aria-labelledby="optionid" >
+               <a class="dropdown-item"id="logout1"href="#">Déconnecter</a>
+               <a class="dropdown-item"id="foireauxquestions.html"href="#">à propos</a>
+          </div>
+        </div>
+          
+      </div>
+
+    </nav>
+
+        <div class="container"> 
+          <h1>Si vous ètes un membre de l'équipe vous devez introduire le mot de passe.<br>ou consulter la rubrique <a href="foireauxquestions.html">FAQ</a></h1>  
+                      <input type="text" id="okm" placeholder="équipe">   
+                      <input id ="jeton" type="password" class="form-control" placeholder="Jeton d'accées">
+              <button id="myaccount" class="btn btn-primary">
+                valider
+              </button>
+
+            </div>
+          </form>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="connection.js"></script>
+        <script src="redirection.js"></script>
+        <script>
+          $("#myaccount").click(function(){
+          var j= $("#jeton").val();
+          firebase.database().ref().child("équipes").orderByChild("ja").equalTo(j).once("value",function(snapshot){
+            snapshot.forEach(function(childSnapshot){
+              var c=childSnapshot.child("code").val();
+              window.location.href="membreenseignant.html";
+            }
+           ); })});
+        </script>
+        <script>
+          firebase.auth().onAuthStateChanged(function(user){
+          if (!user){
+          window.location.href="signupsignin.html";
+          }
+          });
+        </script>
+         <script>
+          firebase.auth().onAuthStateChanged(function(user){
+                if (user)
+                          {
+                            var userID=firebase.auth().currentUser.uid;
+                            firebase.database().ref('Users/' + userID).once('value').then(function(snapshot)                           
+                            {
+                              okm.value=snapshot.val().codeéquipe;
+                            });
+                          }
+                            });
+        </script>
+</body>
+    
+</html>

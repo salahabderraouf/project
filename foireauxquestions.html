@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>FAQ</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <style media="screen">
+      *, ::before, ::after {
+          box-sizing: border-box;
+          margin: 0;
+          padding: 0;
+
+      }
+      body{
+        background-image:linear-gradient( rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url("images/bg.jpg");
+        background-size:cover;
+        background-position:center;
+        color:#fff !important;
+        font-family:sans-serif;
+      }
+      h1 {
+        text-align:center;
+        margin-top:40px;
+        padding: 35px 0;
+        font-size:40px;
+      }
+      .container-faq {
+        width:70%;
+        max-width:900px;
+        min-width:700px;
+        height:auto;
+        margin:10px auto 0;
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+        align-items:flex-start;
+      }
+      .question {
+        width:100%;
+        height:auto;
+        margin:5px;
+        }
+        .visible {
+          display:flex;
+          justify-content:space-between;
+          align-items:center;
+          background:linear-gradient( rgba(0,0,0,0.6),rgba(0,0,0,0.6));
+          border-radius:10px;
+          position:relative;
+          z-index:100;
+        }
+        .visible h2 {
+          margin-left:10px;
+          padding:15px 15px;
+          font-size:25px;
+        }
+        .visible img{
+          margin-right:40px;
+          width:40px;
+          cursor:pointer;
+        }
+        .toggle-pannel{
+          padding:0px 15px;
+          height:0px;
+          opacity:0;
+
+        }
+
+        .toggle-pannel p {
+          font-size:20px;
+          line-height:1.5;
+        }
+
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-dark text-white">
+      <div class="container-fluid">
+        <ul class="nav navbar-nav">
+           <li >
+             <a class="navbar-brand" style ="color:whitesmoke;text-decoration-style:wavy;" href="index.html">Limed</a>
+           </li>
+           <li>
+            <a class="nav-link"   style ="color:whitesmoke;text-decoration-style:wavy;" href="index.html">
+           <span style="color:white">Acceuil</span>
+           </a>
+          </li>
+        </ul>
+       
+      </div>
+    </nav>
+
+    <h1>Foire aux questions?</h1>
+    <h2 style="color:red;font-size:20px;margin-left:30px;">Avant de créer un compte vous devez avoir le mot de passe d'accés à votre équipe,<br>l'accés est limité!</h2>
+    <div class="container-faq">
+      <div class="question">
+        <div class="visible">
+          <h2>Mot de passe oublié ?</h2>
+          <img src="images/plus.svg" alt="">
+
+        </div>
+        <div class="toggle-pannel">
+
+          <p>Si vous avez perdu ou oublié votre mot de passe,
+               il suffit de choisir l'option "Mot de passe oublié" et insérez votre adresse email associée à votre compte, 
+               connectez à votre compte email et vous devez recevoir un message qui contient un lien vers la page 
+               de restitution de mot de passe.
+               Maintenant vous pouvez rénitialiser votre mot de passe en toute sécurité.</p>
+
+        </div>
+      </div>
+
+      <div class="question">
+        <div class="visible">
+          <h2>Compte membre?</h2>
+          <img src="images/plus.svg" alt="">
+
+        </div>
+        <div class="toggle-pannel">
+
+          <p>Le membre c'est l'enseignat chercheur afilié au laboratoire de recherche, il peut gérer ses propres activités en ajoutant des productions scientifique et des évennements et manifestations.Enfin il peut générer son bilan individuel et l'imprimer. </p>
+
+        </div>
+      </div>
+      <div class="question">
+        <div class="visible">
+          <h2>Compte chef d'équipe?</h2>
+          <img src="images/plus.svg" alt="">
+
+        </div>
+        <div class="toggle-pannel">
+
+          <p>Le chef d'équipe est un membre d'une équipe du laboratoire de recherche, il a comme prévilège la gestion de son équipe en ajoutant,modifiant,supprimant des membres, il peut générer le bilan de l'équipe et l'imprimer. </p>
+
+        </div>
+      </div>
+      <div class="question">
+        <div class="visible">
+          <h2>Compte directeur?</h2>
+          <img src="images/plus.svg" alt="">
+
+        </div>
+        <div class="toggle-pannel">
+
+          <p>C'est l'administrateur de cette application il possède toutes les prévilèges, et en tant que directeur du laboratoire il gère les équipes existantes et il peut créer des nouvelles, il peut aussi générer le bilan global du laboratoire et l'imprimer.</p>
+
+
+        </div>
+      </div>
+    </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.0/gsap.min.js"></script>
+  </body>
+
+      <script type="text/javascript">
+
+      const croix=document.querySelectorAll('.visible img');
+
+
+
+  croix.forEach(element => {
+    element.addEventListener('click', function(){
+        const height = this.parentNode.parentNode.childNodes[3].scrollHeight;
+        const curr = this.parentNode.parentNode.childNodes[3];
+
+      if (this.src.includes('plus')) {
+        this.src = 'images/moin.svg';
+        gsap.to(curr, {duration: 0.2, height: height + 40, opacity: 1, padding: '20px 15px'})
+      }else if (this.src.includes('moin')) {
+        this.src='images/plus.svg';
+        gsap.to(curr, {duration: 0.2, height: 0, opacity: 0, padding: '0px 15px'})
+      }
+    })
+  })
+
+      </script>
+</html>

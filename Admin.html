@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    
+        <!-- MATERIAL DESIGN ICONIC FONT -->
+            
+            <!-- STYLE CSS -->
+    
+   
+      <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-database.js"></script>
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-analytics.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-storage.js"></script>
+    <title>Administrateur</title>
+</head>
+<body class="h-100">
+  <nav class="navbar navbar-expand-lg bg-dark text-white">
+    <div class="container-fluid">
+      <ul class="nav navbar-nav">
+         <li >
+           <a class="navbar-brand" style ="color:whitesmoke;text-decoration-style:wavy;" href="index.html">Limed</a>
+         </li>
+         <li>
+          <a class="nav-link"   style ="color:whitesmoke;text-decoration-style:wavy;" href="index.html">
+         <span style="color:white">Acceuil</span>
+         </a>
+        </li>
+        <li>
+          <a class="nav-link"   style ="color:whitesmoke;text-decoration-style:wavy;" href="foireauxquestions.html"><span style="color:white" >FAQ</span>?</a>
+        </li>
+
+      </ul>
+
+      <div class="dropdown navbar-right">
+        <button id="optionid"class="btn btn-light dropdown-toggle bg-dark text-white" type="button" aria-expanded="false" aria-haspopup="true" data-toggle="dropdown"> 
+          Options
+        </button>
+        <div class="dropdown-menu" aria-labelledby="optionid" >
+             <a class="dropdown-item"id="logout"href="#">Déconnecter</a>
+        </div>
+
+      </div>
+        
+    </div>
+
+  </nav>
+ 
+
+<div class="container"> 
+               <div class="service">
+                         <h1 style="text-align:center;">Compte administrateur</h1>         
+               </div>
+     <div class="row">
+          <div class="col-md-3 text-center">
+               <div class="icon">
+                    <img src="images/4.svg">    
+               </div>
+               <h3>Admin</h3>
+               <a href="listeséquipe.html">Voir le tableau des équipes</a>
+               
+          </div>
+          <div class="col-xs-9">
+        
+            <!-- nav tabs -->
+            <ul class="nav nav-tabs">
+            <li><a href="#tab-1" data-toggle= "tab"> <span style="color:black;margin-left:30px;">Ajouter une équipe</span></a></li>
+            <li><a href="gérermdp.html"> <span style="color:black;margin-left:30px;">Gérer les mots de passe</span></a></li>
+            <li><a href="cheféquipe.html"> <span style="color:black;margin-left:30px;">Devenir un chef d'équipe</span></a></li>
+            <li><a href="Membreenseignant.html"> <span style="color:black;margin-left:30px;">Devenir un membre</span></a></li>
+            </ul>
+            
+            <!-- tab panels -->
+            <div class="tab-content">
+            <!-- create new user pain -->
+
+            <div class="tab-pane fade" id="tab-1">
+            <div class="panel-group">
+            <div class="panel panel-default" style="border:none;">
+            <div class="panel-body" style="background-color:#ededed;margin-top:30px;">
+            <div class="alert alert-info">
+            Ajouter une équipe </div>
+            <form>
+                  <div class="form-group">
+                    <input required="required" type="text" class="form-control" id="coe" name="nb" placeholder="*Code de l'équipe" required="required"/>
+                    <input required="required" type="text" class="form-control" id="ine" name="Numéro de dépot" placeholder="*Intitulé de l'équipe" required="required"/>      
+                    <input required="required" type="text" class="form-control" id="che" name="titre" placeholder="*Chef(Nom et prénom)"/>    
+                    <input required="required" type="text" class="form-control" id="ace" name="an" placeholder="*Acronyme de l'équipe"/> 
+                    <input required="required" type="text" class="form-control" id="gde" name="au" placeholder="*Grand domaine"/> 
+                    <input required="required" type="text" class="form-control" id="soe" name="au" placeholder="*Sous domaine"/> 
+                    <input required="required" type="password" class="form-control" id="mdpe" name="au" placeholder="*Jeton d'accées"/>         
+                  </div>
+                            <button id="ae" class="btn btn-primary">Ajouter l'équipe</button>
+            </form>
+
+            </div>
+            </div>
+            </div>
+            </div>
+            </div>
+            </div>
+                       
+               </div>      
+     
+     
+       
+
+    <!-- end of container -->
+  
+          
+      
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="connection.js"></script>
+<script src="ajouteréquipe.js"></script>   
+<script src="app.js"></script>
+<script>
+  firebase.auth().onAuthStateChanged(function(user){
+  if (!user){
+  window.location.href="signupsignin.html";
+  }
+  });
+</script>
+<script>
+  firebase.auth().onAuthStateChanged(function(user)
+  {
+    if (user)
+    {
+       var userID=firebase.auth().currentUser.uid;
+               
+       firebase.database().ref('Users/' + userID).once('value').then(function(snapshot)
+       {
+          if(snapshot.val().option!="Admin")
+           {
+            window.location.href="signinsignup.html";
+           }
+          });}});
+
+
+  </script>
+</body>
+
+</html> 

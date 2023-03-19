@@ -13,7 +13,7 @@ input {
 .container {
   position: relative;
   width: 100%;
-  background-color: #fff;
+  background-color: rgb(15, 142, 203);
   min-height: 100vh;
   overflow: hidden;
 }
@@ -75,7 +75,7 @@ form.sign-in-form {
 .input-field {
   max-width: 380px;
   width: 100%;
-  background-color: #f0f0f0;
+  background-color: #050631;
   margin: 10px 0;
   height: 55px;
   border-radius: 55px;
@@ -100,11 +100,11 @@ form.sign-in-form {
   line-height: 1;
   font-weight: 600;
   font-size: 1.1rem;
-  color: #333;
+  color:white;
 }
 
 .input-field input::placeholder {
-  color: #aaa;
+  color:grey;
   font-weight: 500;
 }
 
@@ -117,7 +117,7 @@ form.sign-in-form {
   outline: none;
   height: 49px;
   border-radius: 49px;
-  color: #fff;
+  color: white;
   text-transform: uppercase;
   font-weight: 600;
   margin: 10px 0;
@@ -146,7 +146,7 @@ form.sign-in-form {
   top: -10%;
   right: 48%;
   transform: translateY(-50%);
-  background-image: linear-gradient(-45deg, #4481eb 0%, #04befe 100%);
+  background-image: linear-gradient(-45deg,#FBFCFC  0%, rgb(15, 142, 203) 100%);
   transition: 1.8s ease-in-out;
   border-radius: 50%;
   z-index: 6;

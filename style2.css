@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+:root {
+  --primary-color: #955df4;
+  --secondary-color: #ff816c;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+.container {
+  max-width: 90rem;
+  margin: 1rem auto;
+  padding-bottom: 2rem;
+  -webkit-box-shadow: 0px 4px 22px -6px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 4px 22px -6px rgba(0,0,0,0.75);
+  box-shadow: 0px 4px 22px -6px rgba(0,0,0,0.75);
+}
+
+header {
+  width: 100%;
+  background: var(--primary-color);
+  padding: 0.5rem;
+}
+
+header h3 {
+  color: #fff;
+  margin-left: 1.5rem;
+}
+
+.table-users,.table-users-o ,.table-users-b,.table-users-c,.table-users-w,.table-users-e,.table-users-m{
+  width: 100%;
+  margin: 0rem auto;
+  border-collapse: collapse;
+}
+
+.table-users th, .table-users td,.table-users-o th,.table-users-o td ,.table-users-b th,.table-users-b td,.table-users-c th,.table-users-c td,
+.table-users-w th,.table-users-w td,.table-users-e th,.table-users-e td,.table-users-m th,.table-users-m td{
+  text-align: left;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  padding: .5rem;
+}
+
+.table-users th ,.table-users-o th,.table-users-b th,.table-users-c th,.table-users-w th,.table-users-e th,.table-users-m th{
+  background: #fafafa;
+  padding: 1rem auto;
+}
+
+.btn {
+  background: transparent;
+  width: 5rem;
+  height: 2rem;
+  border-radius: 1rem;
+  cursor: pointer;
+  outline: none;
+  transition: all .5s ease;
+}
+
+.btn-edit,.btn-edit-o,.btn-edit-b ,.btn-edit-c,.btn-edit-w,.btn-edit-e,.btn-edit-m{
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+}
+
+.btn-edit,.btn-edit-o,.btn-edit-b,.btn-edit-c,.btn-edit-w,.btn-edit-e,.btn-edit-m{
+  background: var(--primary-color);
+  color: #fff;
+}
+
+.btn-delete ,.btn-delete-o,.btn-delete-b,.btn-delete-c,.btn-delete-w,.btn-delete-e,.btn-delete-m{
+  color: var(--secondary-color);
+  border: 1px solid var(--secondary-color);
+}
+
+.btn-delete,.btn-delete-o,.btn-delete-b,.btn-delete-c,.btn-delete-w,.btn-delete-e:hover,.btn-delete-m {
+  background: var(--secondary-color);
+  color: #fff;
+}
+
+.table-wrapper {
+  text-align: center;
+}
+
+.btn-add {
+  width: 6rem;
+  height: 2rem;
+  background: var(--primary-color);
+  border: none;
+  color: #fff;
+}
+
+/* Modal */
+.modal-wrapper ,.modal-wrapper-o,.modal-wrapper-b,.modal-wrapper-c,.modal-wrapper-w,.modal-wrapper-e,.modal-wrapper-m{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: #24232354;
+  display: none;
+}
+
+.modal {
+  position: relative ;
+  background: #fff;
+  text-align: center;
+  width: 40rem;
+  margin: 0rem auto;
+  -webkit-box-shadow: 0px 4px 22px -6px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 4px 22px -6px rgba(0,0,0,0.75);
+  box-shadow: 0px 4px 22px -6px rgba(0,0,0,0.75);
+  animation-name: animatetop;
+  animation-duration: .4s;
+}
+
+@keyframes animatetop {
+  from {
+    top: -300px; opacity: 0;
+  }
+  to {
+    top:0; opacity: 1;
+  }
+}
+
+.modal-show {
+  display: block;
+}
+
+.modal-header {
+  margin-bottom: 0rem;
+  background: #f8fafb;
+  padding: 1rem;
+}
+
+.modal-body {
+  padding: 1rem;
+}
+
+.btn-modal {
+  background: var(--primary-color);
+  border: none;
+  color: #fff;
+  width: 9rem;
+}
+
+input {
+  width: 100%;
+  height: 2rem;
+  margin-bottom: 0.5rem;
+  text-indent: .5rem;
+  outline: none;
+}

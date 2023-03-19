@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
 body
 {
     background-image:linear-gradient( rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url("images/bg.jpg");
@@ -6,29 +8,49 @@ body
     color:#fff !important;
 }
   .service{
-    margin:90px auto;
+    margin:10px auto;
     text-align: center;
   }
+ 
   h1{
-    font-family:sans-serif;
-    letter-spacing:1px;
+      text-align:center;
+      margin-top:05px;
+      padding: 20px 0;
+      font-size:30px;
+      font-family:sans-serif;
+      letter-spacing:1px;
   }
   h1:after
     {
       content:'';
       background:white;
       display:block;
-      width:150px;
+      width:400px;
       height:3px;
-      margin: 10px auto;
+      margin: 05px auto;
     }
+    h2{
+      font-family:sans-serif;
+     
+    }
+    h2:after
+      {
+        content:'';
+        background:white;
+        display:block;
+        width:70px;
+        height:3px;
+        margin: 30px auto;
+      }
+    
+   
     .icon
     {
     font-size:40px;
-    margin:15px auto;
+    margin:5px auto;
     padding:17px;
-    height:150px;
-    width:150px;
+    height:100px;
+    width:100px;
     border:10px solid black;
     border-radius:50%;
     }
@@ -36,4 +58,16 @@ body
     box-shadow: 5px 7px 9px -3px rgba(255,255,255,0.5);
     cursor:pointer;
   }
+  .visible h99 {
+    margin-left:10px;
+    padding:15px 15px;
+    font-size:25px;
+  }
+ 
+
+
+  
+  
+  
+
  

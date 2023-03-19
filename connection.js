@@ -34,6 +34,10 @@ $("#btn1").click(function (e) {
 $("#logout").click(function () { 
   firebase.auth().signOut();
 });
+//logout membre
+$("#logout1").click(function () { 
+  firebase.auth().signOut();
+});
 //reset password
 $("#btnr").click(function () { 
   var auth= firebase.auth();
@@ -65,3 +69,7 @@ $("#btn").click(function (e) {
     window.alert("Message:"+errorMessage);
   });
 });
+
+
+  
+

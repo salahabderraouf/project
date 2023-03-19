@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-database.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-analytics.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-storage.js"></script>
+  <title>Tableau des membres</title>
+  <link rel="stylesheet" href="style2.css">
+  <script src="https://raw.githack.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"></script>
+</head>
+<body>
+  <div class="container">
+    <div id="b">
+    <header>
+      <h3>Tableau des membres de l'équipe</h3> 
+    </header>
+    <div class="table-wrapper">
+      <table class="table-users-m">
+        <tr>
+          <th>Email</th>
+          <th>Genre</th>
+          <th>Nom</th>
+          <th>Prénom</th>
+          <th>NumTel</th>
+          <th>Option</th>
+          <th>Action</th>
+        </tr>
+      </table>
+      <button style=" width: 6rem;
+      height: 2rem;
+      background: var(--primary-color);
+      border: none;
+      margin-top: 15px;margin-bottom: 30px;" onclick="generatePDF2()">Imprimer</button>
+    </div>
+    <!-- Edit Modal -->
+    <div class="edit-modal-m modal-wrapper-m">
+      <div class="modal">
+        <div class="modal-header"><h3>Modifier les membres</h3></div>
+        <div class="modal-body">
+          <form class="form" autocomplete="off">
+              <input type="text" name="emailmem" placeholder="Email">
+              <input type="text" name="genremem" placeholder="Genre">
+              <input type="text" name="nommem" placeholder="Nom">
+              <input type="text" name="prénommem" placeholder="Prénom">
+              <input type="text" name="numtelmem" placeholder="Numéro téléphone">
+              <input type="text" name="optionmem" placeholder="Option">
+              <button class="btn btn-modal">Modifier</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    </div>
+</div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="connection.js"></script>
+<script src="ajoutermembre.js"></script>
+<script src="app1.js"></script>
+<script src="imprimer.js"></script>
+ </body>
+</html>

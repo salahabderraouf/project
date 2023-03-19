@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-database.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-analytics.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-storage.js"></script>
+  <title>Génération des Bilans</title>
+  <link rel="stylesheet" href="style2.css">
+  <script src="https://raw.githack.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"></script>
+</head>
+<body>
+  <div id="bilan">
+  <div class="container">
+    <header>
+      <h3>Tableau des publications dans des revues</h3>
+    </header>
+    <div class="table-wrapper">
+      <table class="table-users">
+        <tr>
+          <th>Type</th>
+          <th>Numéro</th>
+          <th>Issn</th>
+          <th>Nom</th>
+          <th>Article</th>
+          <th>Année</th>
+          <th>Nbr auteurs</th>
+          <th>Part d'auteurs</th>
+          <th>Indice de Collaboration</th>
+          <th>Valeur</th>
+          <th>action</th>
+        </tr>
+      
+      </table>
+     
+    </div>
+    <!-- Edit Modal -->
+    <div class="edit-modal modal-wrapper">
+      <div class="modal">
+        <div class="modal-header"><h3>Modifier les publications dans les revues</h3></div>
+        <div class="modal-body">
+          <div class="form-wrapper">
+            <select   id="newtypepub" class="form-control"style="margin-bottom: 10px;" required="required">
+                <option value="" disabled selected>*Type de publication dans la revue</option>
+                <option value="Publication dans la catégorie exceptionnelle EXP 500 Points">Publications dans la catégorie exceptionnelle EXP 500 Points</option>
+                <option value="Publication dans la catégorie A+ 100 Points">Publication dans la catégorie A+ 100 Points</option>
+                <option value="Publication dans la catégorie A 50 Points">Publication dans la catégorie A 50 Points</option>
+                <option value="Publication dans la catégorie B 25 Points">Publication dans la catégorie B 25 Points</option>
+                <option value="Publication dans la catégorie C 12 Points">Publication dans la catégorie C 12 Points</option>
+                <option value="Publication dans la catégorie D 06 Points">Publication dans la catégorie D 06 Points</option>
+                <option value="Publication dans la catégorie à l'international E 40 Points">Publication dans la catégorie à l'international E 40 Points</option>
+            </select>
+                <i class="zmdi zmdi-caret-down" style="font-size: 17px;"></i>
+          </div>
+          <form class="form" autocomplete="off">
+            <input type="number" name="Numéro" placeholder="Numéro">
+            <input type="text" name="Issn" placeholder="Issn">
+            <input type="text" name="Nom" placeholder="Nom">
+            <input type="text" name="Article" placeholder="Article">
+            <input type="number" name="annéepub" placeholder="année de publication">
+            <input type="number" name="Nbrdauteurs" placeholder="Nbr d'auteurs">
+            <input type="text" name="Partdauteurs" placeholder="part d'auteurs">
+            <input type="text" name="Indicedecollaboration" placeholder="Indice de Collaboration">
+            <input type="text" name="valeur" placeholder="Valeur">
+            <button class="btn btn-modal">Modifier</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    </div>
+    <!-------------------------------------tableau des ouvrages----------------->
+   <section style="margin-top:70px;">
+    <header>
+      <h3>Tableau des ouvrages</h3>
+    </header>
+    <div class="table-wrapper">
+      <table class="table-users-o">
+        <tr>
+          <th>Type</th>
+          <th>Numéro</th>
+          <th>ISBN</th>
+          <th>Editeur commercial</th>
+          <th>Année</th>
+          <th>nom revue</th>
+          <th>auteurs</th>
+          <th>Nbr auteurs</th>
+          <th>Part d'auteurs</th>
+          <th>Indice de Collaboration</th>
+          <th>Valeur</th>
+          <th>action</th>
+        </tr>
+      </table>
+      
+    </div>
+
+    
+     <div class="edit-modal-o modal-wrapper-o">
+      <div class="modal">
+        <div class="modal-header"><h3>Modifier l'ouvrage</h3></div>
+        <div class="modal-body">
+          <div class="form-wrapper">
+            <select id="newto" class="form-control"style="margin-bottom: 10px;" required="required">
+                <option value="" disabled selected>*Type d'ouvrages</option>
+                <option value="Ouvrage complet de recherche (éditeurs internationaux)A+ 300 Points">Ouvrage complet de recherche (éditeurs internationaux)A+ 300 Points</option>
+                <option value="Chapitre d’ouvrage complet de recherche (éditeurs internationaux)A 120 Points">Chapitre d’ouvrage complet de recherche (éditeurs internationaux)A 120 Points</option>
+                <option value="Traduction d’ouvrage de spécialité A' 100 Points">Traduction d’ouvrage de spécialité A' 100 Points</option>
+                <option value="Analyse et commentaire d’un manuscrit A'' 100 Points">Analyse et commentaire d’un manuscrit A" 100 Points</option>
+                <option value="Ouvrage complet de recherche (éditeurs nationaux)B+ 80 Points">Ouvrage complet de recherche (éditeurs nationaux)B+ 80 Points</option>
+                <option value="Chapitre d’ouvrage complet de recherche (éditeurs nationaux) B 32 Points">Chapitre d’ouvrage complet de recherche (éditeurs nationaux) B 32 Points</option>
+                <option value="Ouvrage pédagogique édité	C+ 50 Points">Ouvrage pédagogique édité	C+ 50 Points</option>
+                <option value="Chapitre d’ouvrage pédagogique édité C 20 Points">Chapitre d’ouvrage pédagogique édité C 20 Points</option>
+                <option value="Polycopié édité d’un cours D 15 Points">Polycopié édité d’un cours D 15 Points</option>
+            </select>
+                <i class="zmdi zmdi-caret-down" style="font-size: 17px;"></i>
+         </div>
+          <form class="form" autocomplete="off">
+            <input type="number" name="numo" placeholder="Numéro d'ouvrage">
+            <input type="text" name="isbno" placeholder="ISBN d'ouvrage">
+            <input type="text" name="edito" placeholder="Editeur commercial de l'ouvrage">
+            <input type="text" name="anneo" placeholder="Année">
+            <input type="number" name="nomrevo" placeholder="Nome revue">
+            <input type="number" name="autero" placeholder="Auteurs de l'ouvrage">
+            <input type="text" name="nbrao" placeholder="Nbr d'auteurs de l'ouvrage">
+            <input type="text" name="pao" placeholder="Parts d'auteurs de l'ouvrage">
+            <input type="text" name="indco" placeholder="Indice de collaboration de l'ouvrage">
+            <input type="text" name="vao" placeholder="Valeur de l'ouvrage">
+            <button class="btn btn-modal">Modifier</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section> 
+    
+ <!-------------------------------------tableau des Brevets----------------->
+ <section style="margin-top:70px;">
+                  <header>
+                    <h3>Tableau des Brevets d'invention</h3>
+                  </header>
+            <div class="table-wrapper">
+              <table class="table-users-b">
+                <tr>
+                  <th>Type</th>
+                  <th>Num</th>
+                  <th>Num dépot</th>
+                  <th>Titre</th>
+                  <th>Année</th>
+                  <th>Auteurs</th>
+                  <th>Institution</th>
+                  <th>Valeurs</th>
+                  <th>action</th>
+                </tr>
+              </table>
+             
+            </div>
+
+  
+   <div class="edit-modal-b modal-wrapper-b">
+      <div class="modal">
+        <div class="modal-header"><h3>Modifier le brevet d'invention</h3></div>
+           <div class="modal-body">
+                  <div class="form-wrapper">
+                    <select id="newtb" class="form-control"style="margin-bottom: 10px;" required="required">
+                      <option value="" disabled selected>*Type de brevet d'invention</option>
+                      <option value="Protection internationale 300 Points">Protection internationale 200 Points</option>
+                      <option value="Protection nationale">Protection nationale 50 points</option> 
+                    </select>
+                        <i class="zmdi zmdi-caret-down" style="font-size: 17px;"></i>
+                  </div>
+                  <form class="form" autocomplete="off">
+                    <input type="number" name="nnumb" placeholder="Numéro de brevet">
+                    <input type="number" name="nndb" placeholder="Numéro de dépot">
+                    <input type="text" name="ntb" placeholder="Titre de brevet">
+                    <input type="text" name="nab" placeholder="Année">
+                    <input type="text" name="naub" placeholder="Auteurs de brevet">
+                    <input type="text" name="nidpb" placeholder="institution de dépot">
+                    <input type="text" name="nvab" placeholder="Valeur">
+                    <button class="btn btn-modal">Modifier</button>
+                  </form>   
+           </div>
+         </div>
+      </div> 
+    </section>
+
+  
+ 
+   <!-------------------------------------tableau des conférences----------------->
+  <section style="margin-top:70px;">
+                    <header>
+                      <h3>Tableau des Conférences</h3>
+                    </header>
+                    <div class="table-wrapper">
+                                <table class="table-users-c">
+                                          <tr>
+                                            <th>Type</th>
+                                            <th>Nom</th>
+                                            <th>titre de la présentation</th>
+                                            <th>année</th>
+                                            <th>URL</th>
+                                            <th>Participants</th>
+                                            <th>Parts</th>
+                                            <th>Valeur</th>
+                                            <th>action</th>
+                                          </tr>   
+                                </table>
+                               
+                    </div>
+
+
+              <div class="edit-modal-c modal-wrapper-c">
+                    <div class="modal">
+                        <div class="modal-header"><h3>Modifier les conférence</h3></div>
+                             <div class="modal-body">
+                                  <div class="form-wrapper">
+                                    <select id="newtc" class="form-control"style="margin-bottom: 10px;" required="required">
+                                      <option value="" disabled selected>*Type de conférence</option>
+                                      <option value="Communication à un Congrès Mondial ,EXP+ 30 Points">Communication à un Congrès Mondial ,EXP+ 30 Points</option>
+                                      <option value="Communication à un Congrès continentale ,EXP 20 Points">Communication à un Congrès continentale ,EXP 20 Points</option>  
+                                      <option value="Communication à une conférence mobile ,A+ 20 Points">Communication à une conférence mobile ,A+ 20 Points</option>
+                                      <option value="Communication à une conférence mobile(2 continents) ,A 15 Points">Communication à une conférence mobile(2 continents) ,A 15 Points</option>
+                                      <option value="Conférence Mobile continentales ,B+ 12 Points">Conférence Mobile continentales ,B+ 12 Points</option>
+                                      <option value="Conférence Mobile continentales ,B 10 Points">Conférence Mobile continentales ,B 10 Points</option>
+                                      <option value="Communication à une conférence internationale  ,C+ 10 Points">Communication à une conférence internationale  ,C+ 10 Points</option>
+                                      <option value="Communication à une conférence internationale ,C 08 Points">Communication à une conférence internationale ,C 08 Points</option>
+                                      <option value="Communication à une conférence nationale,D 06 Points">Communication à une conférence nationale,D 06 Points</option>
+                                      <option value="Séminaire Périodique(officiels) ,E 02 Point">Séminaire Périodique(officiels) ,E 02 Points</option>
+                                      <option value="Journées d'études ,02 Points">Journées d'études ,02 Points</option>
+                                    </select>
+                                        <i class="zmdi zmdi-caret-down" style="font-size: 17px;"></i>
+                                  </div>
+                                  <form class="form" autocomplete="off">
+                                    <input type="text" name="nnomc" placeholder="Nom de la conférence">
+                                    <input type="text" name="ntitrec" placeholder="Titre de la présentation">
+                                    <input type="number" name="nannéc" placeholder="Année">
+                                    <input type="text" name="nurlc" placeholder="URL">
+                                    <input type="text" name="nnomsparc" placeholder="Noms des participants">
+                                    <input type="text" name="npartc" placeholder="Parts">
+                                    <input type="text" name="nvaleurc" placeholder="Valeur">
+                                    <button class="btn btn-modal">Modifier</button>
+                                  </form>   
+                            </div>
+                        </div>
+                    </div> 
+              </div>
+</section> 
+
+ <!-------------------------------------tableau des Workshops----------------->
+ <section style="margin-top:70px;">
+  <header>
+    <h3>Tableau des Workshops</h3>
+  </header>
+  <div class="table-wrapper">
+              <table class="table-users-w">
+                        <tr>
+                          <th>Type</th>
+                          <th>Nom</th>
+                          <th>titre de la présentation</th>
+                          <th>année</th>
+                          <th>URL</th>
+                          <th>Participants</th>
+                          <th>Parts</th>
+                          <th>Valeur</th>
+                          <th>action</th>
+                        </tr>   
+              </table>
+              <button style=" width: 6rem;
+              height: 2rem;
+              background: var(--primary-color);
+              border: none;
+              margin-top: 15px;margin-bottom: 30px;" onclick="generatePDF()">Imprimer</button>
+  </div>
+
+
+<div class="edit-modal-w modal-wrapper-w">
+  <div class="modal">
+      <div class="modal-header"><h3>Modifier les Workshops</h3></div>
+           <div class="modal-body">
+                <div class="form-wrapper">
+                  <select id="newtw" class="form-control"style="margin-bottom: 10px;" required="required">
+                    <option value="" disabled selected>*Type de workshop</option>
+                    <option value="Congrès Mondial ,EXP+ 100 Points">Congrès Mondial ,EXP+ 100 Points</option>
+                    <option value="Congrès continentale ,EXP 50 Points">Congrès continentale ,EXP 50 Points</option>  
+                    <option value="Conférence mobile (2 continents),A+ 40 Points">Conférence mobile (2 continents),A+ 40 Points</option>
+                    <option value="Conférence mobile avec actes(2 continents) ,A 25 Points">Conférence mobile avec actes(2 continents) ,A 25 Points</option>
+                    <option value="Conférence Mobile continentales avec actes dans  le WOS,B+ 30 Points">Conférence Mobile continentales avec actes dans  le WOS,B+ 30 Points</option>
+                    <option value="Conférence Mobile continentale avec actes ,B 20 Points">Conférence Mobile continentale avec actes ,B 20 Points</option>
+                    <option value="Conférence internationale avec actes dans le WOS  ,C+ 25 Points">Conférence internationale avec actes dans le WOS  ,C+ 25 Points</option>
+                    <option value="Conférence internationale avec actes ,C 15 Points">Conférence internationale avec actes ,C 15 Points</option>
+                    <option value="Conférence nationale avec actes,D 10 Points">Conférence nationale avec actes,D 10 Points</option>
+                  </select>
+                      <i class="zmdi zmdi-caret-down" style="font-size: 17px;"></i>
+                </div>
+                <form class="form" autocomplete="off">
+                  <input type="text" name="nnomw" placeholder="Nom de la conférence">
+                  <input type="text" name="ntitrew" placeholder="Titre de la présentation">
+                  <input type="number" name="nannéw" placeholder="Année">
+                  <input type="text" name="nurlw" placeholder="URL">
+                  <input type="text" name="nnomsparw" placeholder="Noms des participants">
+                  <input type="text" name="npartw" placeholder="Parts">
+                  <input type="text" name="nvaleurw" placeholder="Valeur">
+                </form>   
+          </div>
+      </div>
+  </div> 
+</div>
+</section> 
+
+
+  </div>
+</div>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+ <script src="connection.js"></script>
+ <script src="ajouterpublication.js"></script>
+ <script src="ajouterouvrages.js"></script>
+ <script src="ajouterbrevet.js"></script>
+ <script src="ajouterconférence.js"></script>
+ <script src="ajouterworkshop.js"></script>
+ <script src="app1.js"></script>
+ <script src="imprimer.js"></script>
+  </body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-database.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-analytics.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-storage.js"></script>
+  <title>Génération des Bilans</title>
+  <link rel="stylesheet" href="style2.css">
+  <script src="https://raw.githack.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"></script>
+</head>
+<body>
+  <div class="container">
+    <div id="bil">
+    <header>
+      <h3>Tableau des équipes du LIMED</h3> 
+    </header>
+    <div class="table-wrapper">
+      <table class="table-users-e">
+        <tr>
+          <th>Code</th>
+          <th>Intitulé</th>
+          <th>Chef</th>
+          <th>Acronyme</th>
+          <th>Grand domaine</th>
+          <th>Sous domaine</th>
+          <th>Jeton d'accées</th>
+          <th>action</th>
+        </tr>
+      </table>
+      <button  style=" width: 6rem;
+      height: 2rem;
+      background: var(--primary-color);
+      border: none;
+      margin-top: 15px;margin-bottom: 30px;" onclick="generatePDF1()">Imprimer</button>
+    </div>
+    
+    
+
+    <!-- Edit Modal -->
+    <div class="edit-modal-e modal-wrapper-e">
+      <div class="modal">
+        <div class="modal-header"><h3>Modifier les équipes</h3></div>
+        <div class="modal-body">
+          <form class="form" autocomplete="off">
+            <input type="text" name="ncde" placeholder="Code">
+            <input type="text" name="nine" placeholder="Intitulé">
+            <input type="text" name="nche" placeholder="Chef d'équipe">
+            <input type="text" name="nace" placeholder="Accronyme">
+            <input type="text" name="ngde" placeholder="Grand domaine de l'équipe">
+            <input type="text" name="nsde" placeholder="Sous domaine de l'équipe">
+            <input type="text" name="nja" placeholder="Jetons d'accées à l'équipe">
+            <button class="btn btn-modal">Modifier</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="connection.js"></script>
+<script src="ajouteréquipe.js"></script>
+<script src="app1.js"></script>
+<script src="imprimer.js"></script>
+ </body>
+</html>

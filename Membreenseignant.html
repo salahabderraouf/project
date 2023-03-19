@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+          <meta charset="UTF-8" />
+          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                  
+          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+          <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous"></script>
+          <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+                  <!-- MATERIAL DESIGN ICONIC FONT -->
+                      <!-- STYLE CSS -->
+          <link rel="stylesheet" href="style1.css">
+                <!-- The core Firebase JS SDK is always required and must be listed first -->
+          <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-app.js"></script>
+          <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-database.js"></script>
+          <!-- TODO: Add SDKs for Firebase products that you want to use
+              https://firebase.google.com/docs/web/setup#available-libraries -->
+          <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-analytics.js"></script>
+          <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-auth.js"></script>
+          <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-storage.js"></script>
+              <title>Membre</title>
+    </head>
+  <body class="h-100">
+          <nav class="navbar navbar-expand-lg bg-dark text-white">
+                <div class="container-fluid">
+                        <ul class="nav navbar-nav">
+                              <li>
+                                <a class="navbar-brand" style ="color:whitesmoke;text-decoration-style:wavy;" href="#">Limed</a>
+                              </li>
+                              <li>
+                                <a class="nav-link"   style ="color:whitesmoke;text-decoration-style:wavy;" href="index.html">
+                              <span style="color:white">Acceuil</span>
+                                </a>
+                              </li>
+                              <li>
+                                <a class="nav-link"   style ="color:whitesmoke;text-decoration-style:wavy;" href="foireauxquestions.html"><span style="color:white" >FAQ</span>?</a>
+                              </li>
+                        </ul>
+                      <div class="dropdown navbar-right">
+                          <button id="optionid"class="btn btn-light dropdown-toggle bg-dark text-white" type="button" aria-expanded="false" aria-haspopup="true" data-toggle="dropdown"> 
+                            Options
+                          </button>
+                          <div class="dropdown-menu"
+                              aria-labelledby="optionid" >
+                              <a class="dropdown-item"id="logout"href="#">Déconnecter</a>
+                          </div>  
+                      </div>
+                </div>
+          </nav>
+   
+
+    <div class="container"> 
+                    <div class="service">
+                           <h2 style="text-align:center;color:whitesmoke;">Ajouter des productions scientifiques et des évenements<span style="color:rgb(192, 145, 17);">.</span></h2>        
+                    </div>
+                
+
+       <div class="row">
+            <div class="col-md-3 text-center">
+                 <div class="icon">
+                      <img src="images/2.svg"/>    
+                 </div>
+                 <h3>Membre</h3>
+                 <p>Cet espace est consacré pour les enseignants chercheurs.</p>
+                 <a href="Bilanind.html">Voir les activités</a>
+            </div>
+
+            <div class="col-xs-9">
+        
+              <!-- nav tabs -->
+              <ul class="nav nav-tabs">
+              <li><a href="#tab-1"data-toggle="tab"> <span style="color:whitesmoke;margin-right:15px;">*Publications dans des revues</span></a></li>
+              <li><a href="#tab-2"data-toggle="tab"> <span style="color:whitesmoke;margin-right:15px;">*Ouvrages</span></a></li>
+              <li><a href="#tab-3"data-toggle="tab"> <span style="color:whitesmoke;margin-right:15px;">*Brevet d'invention</span></a></li>
+              <li><a href="#tab-4"data-toggle="tab"> <span style="color:whitesmoke;margin-right:15px;">*Conférence</span></a></li>
+              <li><a href="#tab-5"data-toggle="tab"> <span style="color:whitesmoke;margin-right:15px;">*Workshop</span></a></li>
+              </ul>
+              
+              
+              <!-- tab panels -->
+              <div class="tab-content responsive">
+              <!-- create new user pain -->
+                 <div class="tab-pane fade" id="tab-1">
+                    <div class="panel-group">
+                        <div class="panel panel-default" style="border:none;">
+                            <div class="panel-body" style="background-color:#ededed;margin-top:30px;">
+                                <div class="alert alert-info">
+                                    Ajouter des publications dans des revues.
+                                </div>
+              <form>
+                              <div class="form-wrapper">
+                                  <select  name="" id="typepub" class="form-control"style="margin-bottom: 10px;" required="required">
+                                      <option value="" disabled selected>*Type de publication dans la revue</option>
+                                      <option value="Publication dans la catégorie exceptionnelle EXP 500 Points">Publications dans la catégorie exceptionnelle EXP 500 Points</option>
+                                      <option value="Publication dans la catégorie A+ 100 Points">Publication dans la catégorie A+ 100 Points</option>
+                                      <option value="Publication dans la catégorie A 50 Points">Publication dans la catégorie A 50 Points</option>
+                                      <option value="Publication dans la catégorie B 25 Points">Publication dans la catégorie B 25 Points</option>
+                                      <option value="Publication dans la catégorie C 12 Points">Publication dans la catégorie C 12 Points</option>
+                                      <option value="Publication dans la catégorie D 06 Points">Publication dans la catégorie D 06 Points</option>
+                                      <option value="Publication dans la catégorie à l'international E 40 Points">Publication dans la catégorie à l'international E 40 Points</option>
+                                  </select>
+                                      <i class="zmdi zmdi-caret-down" style="font-size: 17px;"></i>
+                              </div>
+                              <div class="form-group">
+                                  <label for ="number" style="color:#828282"> * Numéro de la publication.</label>
+                                  <input required="required" type="number" class="form-control" id="npublication" name="numéro"/>      
+                              </div>
+                              <div class="form-group">
+                                      <label for ="text" style="color:#828282"> * ISSN</label>
+                                      <input required="required" type="text" class="form-control" id="issnp" name="issn"/>       
+                              </div>
+                              <div class="form-group">
+                                <label for ="text" style="color:#828282"> * Nom de la revue</label>
+                                <input required="required" type="text" class="form-control" id="nr" name="nr"/>       
+                              </div>
+                              <div class="form-group">
+                                <label for ="text" style="color:#828282"> * Préciser l'article (titre,numéro et pages)</label>
+                                <input required="required" type="text" class="form-control" id="articletitre" name="articletitre"/>       
+                              </div>   
+                              <div class="form-group">
+                                <label for ="year" style="color:#828282"> * Année</label>
+                                <input required="required" type="text" class="form-control" id="annéepub" name="Année"/>       
+                              </div>
+
+                              <div class="form-group">
+                                <input required="required" type="number" class="form-control" id="nbraut" name="Nombre d'auteurs" placeholder="Nombre d'auteurs"/>      
+                                <input required="required" type="text" class="form-control" id="paut" name="Part des auteurs" placeholder="Part des auteurs"/>    
+                                <input required="required" type="text" class="form-control" id="ic" name="Indice de collaboration" placeholder="Indice de collaboration"/> 
+                                <input required="required" type="text" class="form-control" id="valeurdepub" name="Valeurdebub" placeholder="Valeur"/>      
+                              </div>
+                                            <button type="button" class="btn btn-primary" id="ajoutpub">Ajouter la publication</button>
+               </form>
+                        </div>
+                      </div>
+                   </div>
+              </div>
+              
+              <!-- login -->
+         <div class="tab-pane fade" id="tab-2">
+                   <div class="panel-group">
+                       <div class="panel panel-default" style="border:none;">
+                            <div class="panel-body" style="background-color:#ededed;margin-top:20px;">
+                                  <div class="alert alert-info">
+                                    Ajouter des ouvrages.
+                                  </div> 
+              <form>
+                                <div class="form-wrapper">
+                                  <select  name="" id="t-o" class="form-control"style="margin-bottom: 10px;" required="required">
+
+                                      <option value="" disabled selected>*Type d'ouvrages</option>
+                                      <option value="Ouvrage complet de recherche (éditeurs internationaux)A+ 300 Points">Ouvrage complet de recherche (éditeurs internationaux)A+ 300 Points</option>
+                                      <option value="Chapitre d’ouvrage complet de recherche (éditeurs internationaux)A 120 Points">Chapitre d’ouvrage complet de recherche (éditeurs internationaux)A 120 Points</option>
+                                      <option value="Traduction d’ouvrage de spécialité A' 100 Points">Traduction d’ouvrage de spécialité A' 100 Points</option>
+                                      <option value="Analyse et commentaire d’un manuscrit A'' 100 Points">Analyse et commentaire d’un manuscrit A" 100 Points</option>
+                                      <option value="Ouvrage complet de recherche (éditeurs nationaux)B+ 80 Points">Ouvrage complet de recherche (éditeurs nationaux)B+ 80 Points</option>
+                                      <option value="Chapitre d’ouvrage complet de recherche (éditeurs nationaux) B 32 Points">Chapitre d’ouvrage complet de recherche (éditeurs nationaux) B 32 Points</option>
+                                      <option value="Ouvrage pédagogique édité	C+ 50 Points">Ouvrage pédagogique édité	C+ 50 Points</option>
+                                      <option value="Chapitre d’ouvrage pédagogique édité C 20 Points">Chapitre d’ouvrage pédagogique édité C 20 Points</option>
+                                      <option value="Polycopié édité d’un cours D 15 Points">Polycopié édité d’un cours D 15 Points</option>
+                                      
+                                  </select>
+                                      <i class="zmdi zmdi-caret-down" style="font-size: 17px;"></i>
+                                </div>
+                                <div class="form-group">
+                                    <label for ="newUsername"style="color:#828282"> * Numéro d'ouvrage.</label>
+                                    <input required="required" type="number" class="form-control" id="n-o" name="numéro"/>      
+                                </div>
+                                <div class="form-group">
+                                  <label for ="text" style="color:#828282"> * ISBN</label>
+                                  <input required="required" type="text" class="form-control" id="isbn-o" name="issn"/>       
+                                </div>
+                                <div class="form-group">
+                                        <label for ="text" style="color:#828282"> * Editeur commercial</label>
+                                        <input required="required" type="text" class="form-control" id="ec-o" name="issn"/>       
+                                </div>
+                                <div class="form-group">
+                                  <label for ="number" style="color:#828282"> * Année</label>
+                                  <input required="required" type="number" class="form-control" id="année-o" name="Année"/>       
+                                </div>
+                                <div class="form-group">
+                                  <label for ="text" style="color:#828282"> * Nom de la revue avec précisions des pages</label>
+                                  <input required="required" type="text" class="form-control" id="nr-o" name="nr"/>       
+                                </div>
+                                <div class="form-group">
+                                  <input required="required" type="text" class="form-control" id="auteur-o" name="Part des auteurs" placeholder="*Auteurs/*Auteurs" required="required"/>
+                                  <input required="required" type="number" class="form-control" id="nbraut-o" name="Nombre d'auteurs" placeholder="*Nombre d'auteurs" required="required"/>      
+                                  <input required="required" type="text" class="form-control" id="part-o" name="Part des auteurs" placeholder="Part des auteurs"/>    
+                                  <input required="required" type="text" class="form-control" id="icoll-o" name="Indice de collaboration" placeholder="Indice de collaboration"/> 
+                                  <input required="required" type="text" class="form-control" id="val-o" name="Valeur" placeholder="Valeur"/>      
+                                </div>
+                                      <button type="button" id="ajouterouvrage" class="btn btn-primary">Ajouter l'ouvrage</button>
+         </form>
+                     </div>
+                   </div>
+                 </div>
+              </div>
+              
+              <!-- Brevet -->
+              
+               <div class="tab-pane fade" id="tab-3">
+                 <div class="panel-group">
+                   <div class="panel panel-default" style="border:none;">
+                      <div class="panel-body" style="background-color:#ededed;margin-top:20px;">
+                        <form>
+                          <div class="form-wrapper">
+                                <select  name="" id="t-b" class="form-control"style="margin-bottom: 10px;" required="required">
+                                    <option value="" disabled selected>*Type de brevet d'invention</option>
+                                    <option value="Protection internationale 300 Points">Protection internationale 200 Points</option>
+                                    <option value="Protection nationale">Protection nationale 50 points</option>  
+                                </select>
+                                <i class="zmdi zmdi-caret-down" style="font-size: 17px;"></i>
+                            </div>
+                            <div class="form-group">
+                              <input required="required" type="number" class="form-control" id="num-b" name="nb" placeholder="*Numéro de brevet" required="required"/>
+                              <input required="required" type="number" class="form-control" id="num-dépot" name="Numéro de dépot" placeholder="*Numéro de dépot" required="required"/>      
+                              <input required="required" type="text" class="form-control" id="titre-b" name="titre" placeholder="*Titre de brevet"/>    
+                              <input required="required" type="number" class="form-control" id="année-b" name="an" placeholder="*Année"/> 
+                              <input required="required" type="text" class="form-control" id="auteur-b" name="au" placeholder="*Auteurs de brevet"/> 
+                              <input required="required" type="text" class="form-control" id="inst-b" name="au" placeholder="*Institution de dépot"/> 
+                              <input required="required" type="text" class="form-control" id="valeur-b" name="au" placeholder="*Valeur de brevet"/>         
+                            </div>
+              
+             
+                                  <button id="ajouter-br" class="btn btn-primary">Ajouter le Brevet</button>
+                      </form>
+              </div>
+              </div>
+              </div>
+              </div>
+
+              <!--conférence-->
+  
+              <div class="tab-pane fade" id="tab-4">
+                  <div class="panel-group">
+                     <div class="panel panel-default" style="border:none;">
+                         <div class="panel-body" style="background-color:#ededed;margin-top:30px;">
+                             <div class="alert alert-info">Ajouter une conférence </div>
+                  <form>
+                    <div class="form-wrapper">
+                      <select  name="" id="t-conf" class="form-control"style="margin-bottom: 10px;" required="required">
+                          <option value="" disabled selected>*Type de conférence</option>
+                          <option value="Communication à un Congrès Mondial ,EXP+ 30 Points">Communication à un Congrès Mondial ,EXP+ 30 Points</option>
+                          <option value="Communication à un Congrès continentale ,EXP 20 Points">Communication à un Congrès continentale ,EXP 20 Points</option>  
+                          <option value="Communication à une conférence mobile ,A+ 20 Points">Communication à une conférence mobile ,A+ 20 Points</option>
+                          <option value="Communication à une conférence mobile(2 continents) ,A 15 Points">Communication à une conférence mobile(2 continents) ,A 15 Points</option>
+                          <option value="Conférence Mobile continentales ,B+ 12 Points">Conférence Mobile continentales ,B+ 12 Points</option>
+                          <option value="Conférence Mobile continentales ,B 10 Points">Conférence Mobile continentales ,B 10 Points</option>
+                          <option value="Communication à une conférence internationale  ,C+ 10 Points">Communication à une conférence internationale  ,C+ 10 Points</option>
+                          <option value="Communication à une conférence internationale ,C 08 Points">Communication à une conférence internationale ,C 08 Points</option>
+                          <option value="Communication à une conférence nationale,D 06 Points">Communication à une conférence nationale,D 06 Points</option>
+                          <option value="Séminaire Périodique(officiels) ,E 02 Point">Séminaire Périodique(officiels) ,E 02 Points</option>
+                          <option value="Journées d'études ,02 Points">Journées d'études ,02 Points</option>
+                      </select>
+                      <i class="zmdi zmdi-caret-down" style="font-size: 17px;"></i>
+                  </div>
+                  <div class="form-group">
+                    <input required="required" type="text" class="form-control" id="nom-conf" name="nc" placeholder="*Nom de la conférence" required="required"/>
+                    <input required="required" type="text" class="form-control" id="titre-présen" name="tc" placeholder="*Titre de la présentation" required="required"/>      
+                    <input required="required" type="number" class="form-control" id="année-conf" name="an" placeholder="*Année de la conférence"/>    
+                    <input required="required" type="text" class="form-control" id="url-c" name="url" placeholder="*URL de la conférence"/> 
+                    <input required="required" type="text" class="form-control" id="nomparticipant-c" name="nnp" placeholder="*Nom des participants"/> 
+                    <input required="required" type="text" class="form-control" id="part-conf" name="p" placeholder="*Part"/> 
+                    <input required="required" type="text" class="form-control" id="valeur-conf" name="v" placeholder="*Valeur"/>         
+                  </div>
+                            <button id="ajouterconf" class="btn btn-primary">Ajouter la conférence</button>
+                  </form>
+      
+                            </div>
+                        </div>
+                      </div>
+                  </div>
+                       <!--Workshop-->
+
+              <div class="tab-pane fade" id="tab-5">
+                  <div class="panel-group">
+                      <div class="panel panel-default" style="border:none;">
+                          <div class="panel-body" style="background-color:#ededed;margin-top:30px;">
+                               <div class="alert alert-info">Ajouter un Workshop </div>
+
+                <form>
+                              <div class="form-wrapper">
+                                <select  name="" id="t-work" class="form-control"style="margin-bottom: 10px;" required="required">
+                                    <option value="" disabled selected>*Type de Workshop</option>
+                                    <option value="Congrès Mondial ,EXP+ 100 Points">Congrès Mondial ,EXP+ 100 Points</option>
+                                    <option value="Congrès continentale ,EXP 50 Points">Congrès continentale ,EXP 50 Points</option>  
+                                    <option value="Conférence mobile (2 continents),A+ 40 Points">Conférence mobile (2 continents),A+ 40 Points</option>
+                                    <option value="Conférence mobile avec actes(2 continents) ,A 25 Points">Conférence mobile avec actes(2 continents) ,A 25 Points</option>
+                                    <option value="Conférence Mobile continentales avec actes dans  le WOS,B+ 30 Points">Conférence Mobile continentales avec actes dans  le WOS,B+ 30 Points</option>
+                                    <option value="Conférence Mobile continentale avec actes ,B 20 Points">Conférence Mobile continentale avec actes ,B 20 Points</option>
+                                    <option value="Conférence internationale avec actes dans le WOS  ,C+ 25 Points">Conférence internationale avec actes dans le WOS  ,C+ 25 Points</option>
+                                    <option value="Conférence internationale avec actes ,C 15 Points">Conférence internationale avec actes ,C 15 Points</option>
+                                    <option value="Conférence nationale avec actes,D 10 Points">Conférence nationale avec actes,D 10 Points</option>
+                                </select>
+                                <i class="zmdi zmdi-caret-down" style="font-size: 17px;"></i>
+                            </div>
+                            <div class="form-group">
+                              <input required="required" type="text" class="form-control" id="nom-work" name="nc" placeholder="*Nom de la conférence" required="required"/>
+                              <input required="required" type="text" class="form-control" id="titre-work" name="tc" placeholder="*Titre de la présentation" required="required"/>      
+                              <input required="required" type="number" class="form-control" id="année-work" name="an" placeholder="*Année de la conférence"/>    
+                              <input required="required" type="text" class="form-control" id="url-work" name="url" placeholder="*URL de la conférence"/> 
+                              <input required="required" type="text" class="form-control" id="nomparticipant-work" name="nnp" placeholder="*Nom des participants"/> 
+                              <input required="required" type="text" class="form-control" id="part-work" name="p" placeholder="*Part"/> 
+                              <input required="required" type="text" class="form-control" id="valeur-work" name="v" placeholder="*Valeur"/>         
+                            </div>
+                                               <button id="ajouter-work" class="btn btn-primary">Ajouter le Workshop</button>
+                </form>
+              
+                              </div>
+                        </div>
+                  </div>
+            </div>
+        </div> 
+
+        </div>
+        </div>
+        <!--end of container-->
+        </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="connection.js"></script>
+        <script src="ajouterpublication.js"></script>
+        <script src="ajouterouvrages.js"></script>
+        <script src="ajouterbrevet.js"></script>
+        <script src="ajouterconférence.js"></script>
+        <script src="ajouterworkshop.js"></script>
+<script>
+  firebase.auth().onAuthStateChanged(function(user){
+if (!user){
+  window.location.href="signupsignin.html";
+}
+  });
+  
+</script>
+
+
+</body>
+
+ </html> 

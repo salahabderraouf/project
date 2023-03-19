@@ -6,9 +6,13 @@
     <script
       src="https://kit.fontawesome.com/64d58efce2.js"crossorigin="anonymous">
     </script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    
    
     <link rel="stylesheet" href="style0.css"/>
-       
+    
       <!-- The core Firebase JS SDK is always required and must be listed first -->
 <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-database.js"></script>
@@ -19,7 +23,38 @@
 <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-storage.js"></script>
     <title>Connexion et inscription</title>
   </head>
-  <body>
+  <body class="h-100">
+    <nav class="navbar navbar-expand-lg bg-dark text-white">
+      <div class="container-fluid">
+        <ul class="nav navbar-nav">
+           <li >
+            <a class="navbar-brand"   style ="color:whitesmoke;text-decoration-style:wavy;" href="#"> <img src="images/limed.png" width="350" height="80" alt=""></a>
+           </li>
+           <li>
+            <a class="nav-link"   style ="color:whitesmoke;text-decoration-style:wavy;" href="index.html">
+           <span style="color:white">Acceuil</span>
+           </a>
+          </li>
+          <li>
+            <a class="nav-link"   style ="color:whitesmoke;text-decoration-style:wavy;" href="foireauxquestions.html"><span style="color:white" >FAQ</span>?</a>
+          </li>
+
+        </ul>
+        <div class="dropdown navbar-right">
+          <button id="optionid"class="btn btn-light dropdown-toggle bg-dark text-white" type="button" aria-expanded="false" aria-haspopup="true" data-toggle="dropdown"> 
+            Options
+          </button>
+          <div class="dropdown-menu"
+               aria-labelledby="optionid" >
+               <a class="dropdow-item"id="logout"href="#">Déconnecter</a>
+
+          </div>
+
+        </div>
+          
+      </div>
+
+    </nav>
     <div class="container">
       <div class="forms-container">
         <div class="signin-signup">
@@ -67,7 +102,7 @@
              
             </p>
             <button class="btn transparent" id="sign-up-btn">
-              let's go
+              Inscrire
             </button>
           </div>
           <img src="images/log.svg" class="image" alt="" />
@@ -76,8 +111,8 @@
           <div class="content">
             <h3>Parmi nous ?</h3>
             <p>
-                La platform LAMOS offre une meilleure expérience,<br>
-                rejoignez nous.
+                Acceder à votre compte,<br>
+                Rejoignez nous.
             </p>
             <button class="btn transparent" id="sign-in-btn">
               S'authentifier
@@ -93,10 +128,37 @@
 <script src="connection.js"></script>
 <script src="app.js"></script>
 <script>
-firebase.auth().onAuthStateChanged(function(user){
-if (user){
-  window.location.href="acceuil.html";
-}
+firebase.auth().onAuthStateChanged(function(user)
+{
+  if (user)
+  {
+     var userID=firebase.auth().currentUser.uid;
+             
+     firebase.database().ref('Users/' + userID).once('value').then(function(snapshot)
+     {
+      if(snapshot.val())
+      {
+        if(snapshot.val().option=="Admin")
+         {
+          window.location.href="Admin.html";
+         }
+        else
+        if(snapshot.val().option=="Chef équipe")
+         {
+          window.location.href="jetoncheféquipe.html";
+         }
+         else 
+         if(snapshot.val().option=="Membre"){
+          window.location.href="jeton.html";
+         }
+      }
+      else
+      {window.location.href="membre.html"}
+     
+         
+     });
+
+  }
   });
 </script>
 
